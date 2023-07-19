@@ -1,9 +1,8 @@
-const socket = io('wss://rrr-t4ba.onrender.com', {
-    headers: {
-        'user-agent': 'Chrome'
-    }
+const socket = io('wss://mirage-pastoral-rowboat.glitch.me', {
+    
+        transports: ['websocket'],
+       
 });
-
 
 socket.on('message', text => {
     const el = document.createElement('li');
