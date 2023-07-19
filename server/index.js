@@ -17,4 +17,4 @@ io.on('connection', (socket) => {
 
 const PORT = 1234; // Allow dynamic port assignment for deployment
 
-http.listen(PORT, () => console.log(`listening on http://${}:${PORT}`));
+http.listen(PORT, () => console.log(`listening on http://:${PORT}`));
