@@ -1,8 +1,10 @@
-const socket = io('wss://mirage-pastoral-rowboat.glitch.me/', {
+const socket = io('wss://rrr-t4ba.onrender.com', {
     headers: {
         'user-agent': 'Chrome'
     }
 });
+
+
 socket.on('message', text => {
     const el = document.createElement('li');
     el.innerHTML = text;
