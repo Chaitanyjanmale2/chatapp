@@ -3,6 +3,9 @@ const io = require('socket.io')(http, {
     cors: { origin: "*" }
 });
 
+const os = require('os');
+const hostname = os.hostname();
+
 io.on('connection', (socket) => {
     console.log('a user connected');
 
@@ -12,6 +15,6 @@ io.on('connection', (socket) => {
     });
 });
 
-const PORT = process.env.PORT || 1234; // Allow dynamic port assignment for deployment
+const PORT = 1234; // Allow dynamic port assignment for deployment
 
-http.listen(PORT, () => console.log(`listening on http://localhost:${PORT}`));
+http.listen(PORT, () => console.log(`listening on http://${hostname}:${PORT}`));
