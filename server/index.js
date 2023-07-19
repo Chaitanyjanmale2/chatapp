@@ -1,6 +1,4 @@
-
 const http = require('http').createServer();
-
 const io = require('socket.io')(http, {
     cors: { origin: "*" }
 });
@@ -14,23 +12,6 @@ io.on('connection', (socket) => {
     });
 });
 
-http.listen(1234, () => console.log('listening on http://localhost:1234'));
+const PORT = process.env.PORT || 1234; // Allow dynamic port assignment for deployment
 
-
-// Regular Websockets
-
-// const WebSocket = require('ws')
-// const server = new WebSocket.Server({ port: '8080' })
-
-// server.on('connection', socket => {
-
-//   socket.on('message', message => {
-
-//     socket.send(`Roger that! ${message}`);
-
-//   });
-
-// });
-
-
-
+http.listen(PORT, () => console.log(`listening on http://localhost:${PORT}`));
